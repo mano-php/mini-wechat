@@ -10,62 +10,33 @@ use Uupt\MiniWechat\Models\WechatSetting;
 
 class MiniWechatServiceProvider extends ServiceProvider
 {
+    protected array $menu = [
+        [
+            'parent'    => '',
+            'title'     => '用户模块',
+            'url'       => '/users',
+            'url_type'  => '1',
+            'icon'      => 'ph:user-gear',
+        ],
+        [
+            'parent'    => '用户模块',
+            'title'     => '用户管理',
+            'url'       => '/member',
+            'url_type'  => '1',
+            'icon'      => 'ph:user-gear',
+        ],
+        [
+            'parent'    => '用户模块',
+            'title'     => '微信授权',
+            'url'       => '/wechat_bind1',
+            'url_type'  => '1',
+            'icon'      => 'ph:user-gear',
+        ]
+    ];
+
     public function install()
     {
         parent::install();
-        $user_node_id = AdminMenu::query()->insertGetId([
-            'parent_id' => 0,
-            'order' => 0,
-            'title' => '用户模块',
-            'icon' => 'ph:user-gear',
-            'url' => '/users',
-            'url_type' => 1,
-            'visible' => 1,
-            'is_home' => 0,
-            'keep_alive' => 0,
-            'iframe_url' => NULL,
-            'component' => 'amis',
-            'is_full' => 0,
-            'extension' => NULL,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ]);
-        AdminMenu::query()->insert([
-            [
-                'parent_id' => $user_node_id,
-                'order' => 8,
-                'title' => '用户管理',
-                'icon' => 'ph:user-gear',
-                'url' => '/member',
-                'url_type' => 1,
-                'visible' => 1,
-                'is_home' => 0,
-                'keep_alive' => 0,
-                'iframe_url' => NULL,
-                'component' => NULL,
-                'is_full' => 0,
-                'extension' => NULL,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ],
-            [
-                'parent_id' => $user_node_id,
-                'order' => 8,
-                'title' => '微信授权',
-                'icon' => 'ph:user-gear',
-                'url' => '/wechat_bind1',
-                'url_type' => 1,
-                'visible' => 0,
-                'is_home' => 0,
-                'keep_alive' => 0,
-                'iframe_url' => NULL,
-                'component' => NULL,
-                'is_full' => 0,
-                'extension' => NULL,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ]
-        ]);
     }
     public function register()
     {
