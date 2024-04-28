@@ -12,7 +12,7 @@ class MiniWechatServiceProvider extends ServiceProvider
 {
     protected array $menu = [
         [
-            'parent'    => '',
+            'parent'    => 0,
             'title'     => '用户模块',
             'url'       => '/users',
             'url_type'  => '1',
