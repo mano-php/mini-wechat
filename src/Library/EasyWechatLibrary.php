@@ -19,8 +19,7 @@ class EasyWechatLibrary
      */
     public static function getMiniAppApplication(): Application
     {
-        // 'app_id' => \Hyperf\Support\env('ROUTINE_APP_ID', 'wx83e5c31f2470e377'),
-        // 'secret' => \Hyperf\Support\env('ROUTINE_APP_SECRET', 'a2b0ed9678863a2f45564d8f4f6b9baf'),
+        
         $config = WechatSetting::query()->where('type','mini-wechat')->whereIn('key',[
             'appid',
             'secret'
