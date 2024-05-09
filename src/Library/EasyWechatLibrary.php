@@ -1,11 +1,11 @@
 <?php
 
-namespace Uupt\MiniWechat\Library;
+namespace ManoCode\MiniWechat\Library;
 
 use EasyWeChat\Kernel\Exceptions\InvalidArgumentException;
 use EasyWeChat\MiniApp\Application;
 use Illuminate\Support\Facades\DB;
-use Uupt\MiniWechat\Models\WechatSetting;
+use ManoCode\MiniWechat\Models\WechatSetting;
 
 /**
  * 微信扩展包核心库

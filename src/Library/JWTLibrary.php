@@ -1,6 +1,6 @@
 <?php
 
-namespace Uupt\MiniWechat\Library;
+namespace ManoCode\MiniWechat\Library;
 
 
 /**

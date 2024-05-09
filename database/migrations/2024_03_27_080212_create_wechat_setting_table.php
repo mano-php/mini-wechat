@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-        \Uupt\MiniWechat\Models\WechatSetting::query()->insert([
+        \ManoCode\MiniWechat\Models\WechatSetting::query()->insert([
             // 小程序示例配置
             [
                 'type'=>'mini-wechat',

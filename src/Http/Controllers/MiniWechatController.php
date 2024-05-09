@@ -1,6 +1,6 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Controllers;
+namespace ManoCode\MiniWechat\Http\Controllers;
 
 use Slowlyo\OwlAdmin\Controllers\AdminController;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Controllers;
+namespace ManoCode\MiniWechat\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -8,8 +8,8 @@ use Slowlyo\OwlAdmin\Renderers\Page;
 use Slowlyo\OwlAdmin\Renderers\Form;
 use Slowlyo\OwlAdmin\Controllers\AdminController;
 use Slowlyo\OwlAdmin\Renderers\Tag;
-use Uupt\MiniWechat\Models\Member;
-use Uupt\MiniWechat\Services\MemberAddresService;
+use ManoCode\MiniWechat\Models\Member;
+use ManoCode\MiniWechat\Services\MemberAddresService;
 
 /**
  * 收货地址

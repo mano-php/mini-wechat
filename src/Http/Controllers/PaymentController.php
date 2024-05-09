@@ -1,13 +1,13 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Controllers;
+namespace ManoCode\MiniWechat\Http\Controllers;
 
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
-use Uupt\MiniWechat\Library\EasyWechatLibrary;
-use Uupt\MiniWechat\Models\WechatBind;
-use Uupt\MiniWechat\Models\WechatSetting;
-use Uupt\MiniWechat\Traits\ApiResponseTrait;
+use ManoCode\MiniWechat\Library\EasyWechatLibrary;
+use ManoCode\MiniWechat\Models\WechatBind;
+use ManoCode\MiniWechat\Models\WechatSetting;
+use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
 class PaymentController
 {

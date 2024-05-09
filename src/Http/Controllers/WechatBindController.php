@@ -1,11 +1,11 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Controllers;
+namespace ManoCode\MiniWechat\Http\Controllers;
 
 use Slowlyo\OwlAdmin\Renderers\Page;
 use Slowlyo\OwlAdmin\Renderers\Form;
 use Slowlyo\OwlAdmin\Controllers\AdminController;
-use Uupt\MiniWechat\Services\WechatBindService;
+use ManoCode\MiniWechat\Services\WechatBindService;
 
 /**
  * 微信授权

@@ -1,19 +1,19 @@
 {
-    "name": "uupt-open/mini-wechat",
+    "name": "mano-code/mini-wechat",
     "alias": "微信小程序模块",
     "description": "微信登录、授权、支付相关功能",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "owl-admin",
         "extension"
     ],
-    "homepage": "https://github.com/uupt/mini-wechat",
+    "homepage": "https://github.com/mano-php/mini-wechat",
     "license": "MIT",
     "authors": [
         {
-            "name": "UU跑腿",
-            "email": "admin@uupt.com"
+            "name": "Mano",
+            "email": "mano@qq.com"
         }
     ],
     "require": {
@@ -24,14 +24,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Uupt\\MiniWechat\\": "src/"
+            "ManoCode\\MiniWechat\\": "src/"
         }
     },
     "extra": {
-        "owl-admin": "Uupt\\MiniWechat\\MiniWechatServiceProvider",
+        "owl-admin": "ManoCode\\MiniWechat\\MiniWechatServiceProvider",
         "laravel": {
             "providers": [
-                "Uupt\\MiniWechat\\MiniWechatServiceProvider"
+                "ManoCode\\MiniWechat\\MiniWechatServiceProvider"
             ]
         }
     }

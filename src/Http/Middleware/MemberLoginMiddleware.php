@@ -1,13 +1,13 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Middleware;
+namespace ManoCode\MiniWechat\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Uupt\MiniWechat\Library\JWTLibrary;
-use Uupt\MiniWechat\Models\Member;
-use Uupt\MiniWechat\Traits\ApiResponseTrait;
+use ManoCode\MiniWechat\Library\JWTLibrary;
+use ManoCode\MiniWechat\Models\Member;
+use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
 /**
  *

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Uupt\MiniWechat\Traits;
+namespace ManoCode\MiniWechat\Traits;
 
 use Illuminate\Http\Request;
-use Uupt\MiniWechat\Http\Middleware\MemberLoginMiddleware;
-use Uupt\MiniWechat\Library\JWTLibrary;
-use Uupt\MiniWechat\Models\Member;
+use ManoCode\MiniWechat\Http\Middleware\MemberLoginMiddleware;
+use ManoCode\MiniWechat\Library\JWTLibrary;
+use ManoCode\MiniWechat\Models\Member;
 
 /**
  * Trait ApiResponseTrait

@@ -1,10 +1,10 @@
 <?php
 
-namespace Uupt\MiniWechat\Services;
+namespace ManoCode\MiniWechat\Services;
 
-use Uupt\MiniWechat\Models\Member;
+use ManoCode\MiniWechat\Models\Member;
 use Slowlyo\OwlAdmin\Services\AdminService;
-use Uupt\MiniWechat\Models\WechatBind;
+use ManoCode\MiniWechat\Models\WechatBind;
 
 /**
  * 用户管理

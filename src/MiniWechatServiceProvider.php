@@ -1,12 +1,12 @@
 <?php
 
-namespace Uupt\MiniWechat;
+namespace ManoCode\MiniWechat;
 
 use Slowlyo\OwlAdmin\Models\AdminMenu;
 use Slowlyo\OwlAdmin\Renderers\Form;
 use Slowlyo\OwlAdmin\Renderers\TextControl;
 use Slowlyo\OwlAdmin\Extend\ServiceProvider;
-use Uupt\MiniWechat\Models\WechatSetting;
+use ManoCode\MiniWechat\Models\WechatSetting;
 
 class MiniWechatServiceProvider extends ServiceProvider
 {

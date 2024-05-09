@@ -13,13 +13,13 @@
 
 
 ```php
-$application = \Uupt\MiniWechat\Library\EasyWechatLibrary::getMiniAppPaymentApplication();
+$application = \ManoCode\MiniWechat\Library\EasyWechatLibrary::getMiniAppPaymentApplication();
 $response = $application->getClient()->postJson('/v3/pay/transactions/jsapi',[
-    'appid'=>Uupt\MiniWechat\Models\WechatSetting::query()->where([
+    'appid'=>ManoCode\MiniWechat\Models\WechatSetting::query()->where([
         'type'=>'mini-wechat',
         'key'=>'appid'
     ])->value('value'),
-    'mchid'=>\Uupt\MiniWechat\Models\WechatSetting::query()->where([
+    'mchid'=>\ManoCode\MiniWechat\Models\WechatSetting::query()->where([
         'type'=>'wechat-payment',
         'key'=>'mch_id'
     ])->value('value'),
@@ -30,7 +30,7 @@ $response = $application->getClient()->postJson('/v3/pay/transactions/jsapi',[
         'total'=>1,// 一分钱测试调用(单位为分)
     ],
     'payer'=>[
-        'openid'=>\Uupt\MiniWechat\Models\WechatBind::query()->where(['user_id'=>$this->getMember($request)->getAttribute('id'),'platform'=>'mini-wechat'])->value('openid')
+        'openid'=>\ManoCode\MiniWechat\Models\WechatBind::query()->where(['user_id'=>$this->getMember($request)->getAttribute('id'),'platform'=>'mini-wechat'])->value('openid')
     ]
 ],[
     'headers'=>[
@@ -45,7 +45,7 @@ dump($response);// 下单结果打印
 
 
 ```php
-$application = \Uupt\MiniWechat\Library\EasyWechatLibrary::getMiniAppPaymentApplication(); 
+$application = \ManoCode\MiniWechat\Library\EasyWechatLibrary::getMiniAppPaymentApplication(); 
 $server = $application->getServer();
 
 $server->handlePaid(function (Message $message, \Closure $next) {

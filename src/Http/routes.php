@@ -1,14 +1,14 @@
 <?php
 
-use Uupt\MiniWechat\Http\Controllers;
+use ManoCode\MiniWechat\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 // 用户管理
-Route::resource('member', \Uupt\MiniWechat\Http\Controllers\MemberController::class);
+Route::resource('member', \ManoCode\MiniWechat\Http\Controllers\MemberController::class);
 // 微信授权
-Route::resource('wechat_bind', \Uupt\MiniWechat\Http\Controllers\WechatBindController::class);
+Route::resource('wechat_bind', \ManoCode\MiniWechat\Http\Controllers\WechatBindController::class);
 // 收货地址
-Route::resource('member_address', \Uupt\MiniWechat\Http\Controllers\MemberAddresController::class);
+Route::resource('member_address', \ManoCode\MiniWechat\Http\Controllers\MemberAddresController::class);
 
 Route::get('mini-wechat', [Controllers\MiniWechatController::class, 'index']);
 // 获取配置

@@ -1,10 +1,10 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Controllers;
+namespace ManoCode\MiniWechat\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Uupt\MiniWechat\Models\MemberAddres;
-use Uupt\MiniWechat\Traits\ApiResponseTrait;
+use ManoCode\MiniWechat\Models\MemberAddres;
+use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
 /**
  * 用户收货地址管理

@@ -1,11 +1,11 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Controllers;
+namespace ManoCode\MiniWechat\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Slowlyo\OwlAdmin\Controllers\AdminController;
-use Uupt\MiniWechat\Models\WechatSetting;
+use ManoCode\MiniWechat\Models\WechatSetting;
 
 /**
  * 设置相关操作

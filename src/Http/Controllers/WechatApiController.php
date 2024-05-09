@@ -1,16 +1,16 @@
 <?php
 
-namespace Uupt\MiniWechat\Http\Controllers;
+namespace ManoCode\MiniWechat\Http\Controllers;
 
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Uupt\MiniWechat\Library\EasyWechatLibrary;
-use Uupt\MiniWechat\Library\JWTLibrary;
-use Uupt\MiniWechat\Models\Member;
-use Uupt\MiniWechat\Models\WechatBind;
-use Uupt\MiniWechat\Traits\ApiResponseTrait;
+use ManoCode\MiniWechat\Library\EasyWechatLibrary;
+use ManoCode\MiniWechat\Library\JWTLibrary;
+use ManoCode\MiniWechat\Models\Member;
+use ManoCode\MiniWechat\Models\WechatBind;
+use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
 /**
  * 微信接口控制器
