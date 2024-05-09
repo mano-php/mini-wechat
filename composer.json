@@ -18,7 +18,7 @@
     "require": {
         "php": ">=8.0",
         "slowlyo/owl-admin": "*",
-        "w7corp/easywechat": "6.15.0",
+        "w7corp/easywechat": "^6.15.1",
         "ext-openssl": "*"
     },
     "autoload": {
