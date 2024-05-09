@@ -10,7 +10,7 @@ use ManoCode\MiniWechat\Models\WechatSetting;
 
 class MiniWechatServiceProvider extends ServiceProvider
 {
-    protected array $menu = [
+    protected  $menu = [
         [
             'parent'    => 0,
             'title'     => '用户模块',
