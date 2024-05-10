@@ -40,6 +40,7 @@ class MiniWechatServiceProvider extends ServiceProvider
     public function install()
     {
         parent::install();
+        $this->runMigrations();
     }
     public function register()
     {
