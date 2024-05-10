@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('mobile')->index()->default('')->nullable()->comment('手机号');
             $table->string('leader_ids')->default('')->comment('负责人');
             $table->enum('status', ['enable','disable'])->index()->default('enable');
-            $table->enum('sex',['1','2'])->default('1')->index()->default('性别');
+            $table->enum('sex',['1','2'])->default('1')->index()->comment('性别');
             $table->date('luck_date')->index()->nullable()->comment('幸运日');
             $table->timestamps();
             $table->softDeletes();

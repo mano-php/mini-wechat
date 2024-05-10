@@ -53,13 +53,18 @@ class MiniWechatServiceProvider extends ServiceProvider
     }
 	public function settingForm()
 	{
-        // 获取小程序配置
-        $miniWechatConfig = WechatSetting::query()->where('type','mini-wechat')->pluck('value','key');
-        // 获取微信支付配置
-        $wechatPaymentConfig = WechatSetting::query()->where('type','wechat-payment')->pluck('value','key');
-        // 其他配置
-        $otherConfig = WechatSetting::query()->where('type','other')->pluck('value','key');
-
+        try{
+            // 获取小程序配置
+            $miniWechatConfig = WechatSetting::query()->where('type','mini-wechat')->pluck('value','key');
+            // 获取微信支付配置
+            $wechatPaymentConfig = WechatSetting::query()->where('type','wechat-payment')->pluck('value','key');
+            // 其他配置
+            $otherConfig = WechatSetting::query()->where('type','other')->pluck('value','key');
+        }catch (\Throwable $exception){
+            $miniWechatConfig = collect();
+            $wechatPaymentConfig = collect();
+            $otherConfig = collect();
+        }
 
 	    return $this->basePage()->body([
             amis()->Tabs()->tabs([
