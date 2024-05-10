@@ -28,14 +28,14 @@ return new class extends Migration
             [
                 'type'=>'mini-wechat',
                 'key'=>'appid',
-                'value'=>'wx3cf0f39249eb0exx',
+                'value'=>'',
                 'label'=>'应用ID',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
             [
                 'type'=>'mini-wechat',
                 'key'=>'secret',
-                'value'=>'f1c242f4f28f735d4687abb469072axx',
+                'value'=>'',
                 'label'=>'应用秘钥',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
@@ -49,7 +49,7 @@ return new class extends Migration
             [
                 'type'=>'mini-wechat',
                 'key'=>'aes_key',
-                'value'=>'..........',
+                'value'=>'',
                 'label'=>'aes_key',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
@@ -64,28 +64,28 @@ return new class extends Migration
             [
                 'type'=>'wechat-payment',
                 'key'=>'certificate',
-                'value'=>'。。。。。。。。。。。。。。。。。。。。。。',
+                'value'=>'',
                 'label'=>'证书内容',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
             [
                 'type'=>'wechat-payment',
                 'key'=>'private_key',
-                'value'=>'。。。。。。。。。。。。。。。。。。。。。。',
+                'value'=>'',
                 'label'=>'证书秘钥',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
             [
                 'type'=>'wechat-payment',
                 'key'=>'secret_key',
-                'value'=>'43A03299A3C3FED3D8CE7B820Fxxxxx',
+                'value'=>'',
                 'label'=>'v3 API 秘钥',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
             [
                 'type'=>'wechat-payment',
                 'key'=>'v2_secret_key',
-                'value'=>'26db3e15cfedb44abfbb5fe94fxxxxx',
+                'value'=>'',
                 'label'=>'v2 API 秘钥',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
