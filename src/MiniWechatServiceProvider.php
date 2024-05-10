@@ -40,8 +40,6 @@ class MiniWechatServiceProvider extends ServiceProvider
     public function install()
     {
         parent::install();
-        $this->publishable();
-        $this->runMigrations();
     }
     public function register()
     {
@@ -53,6 +51,7 @@ class MiniWechatServiceProvider extends ServiceProvider
     }
 	public function settingForm()
 	{
+
         try{
             // 获取小程序配置
             $miniWechatConfig = WechatSetting::query()->where('type','mini-wechat')->pluck('value','key');
