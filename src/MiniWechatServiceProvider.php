@@ -31,7 +31,7 @@ class MiniWechatServiceProvider extends ServiceProvider
         [
             'parent'    => '用户模块',
             'title'     => '微信授权',
-            'url'       => '/wechat_bind1',
+            'url'       => '/wechat_bind',
             'url_type'  => '1',
             'icon'      => 'ph:user-gear',
         ]

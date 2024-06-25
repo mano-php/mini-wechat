@@ -4,7 +4,9 @@
     "description": "微信登录、授权、支付相关功能",
     "type": "library",
     "version": "1.0.10",
-    "keywords": ["extension"],
+    "keywords": [
+        "extension"
+    ],
     "homepage": "https://github.com/mano-php/mini-wechat",
     "license": "MIT",
     "authors": [
@@ -17,6 +19,7 @@
         "php": ">=8.0",
         "slowlyo/owl-admin": "*",
         "w7corp/easywechat": "6.15.1",
+        "mano-code/corps": "*",
         "ext-openssl": "*"
     },
     "autoload": {
