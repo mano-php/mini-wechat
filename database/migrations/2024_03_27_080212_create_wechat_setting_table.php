@@ -113,14 +113,14 @@ return new class extends Migration
             [
                 'type'=>'other',
                 'key'=>'app_logo',
-                'value'=>'',
+                'value'=>'mini-app-logo.png',
                 'label'=>'应用Logo',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
             [
                 'type'=>'other',
                 'key'=>'banner_img',
-                'value'=>'',
+                'value'=>'mini-app-login-image.png',
                 'label'=>'登录页活动图',
                 'created_at'=>date('Y-m-d H:i:s')
             ],
