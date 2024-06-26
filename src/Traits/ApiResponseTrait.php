@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ManoCode\MiniWechat\Traits;
 
 use Illuminate\Http\Request;
+use Mano\Crm\Models\CrmUser;
 use ManoCode\MiniWechat\Http\Middleware\MemberLoginMiddleware;
 use ManoCode\MiniWechat\Library\JWTLibrary;
 use ManoCode\MiniWechat\Models\Member;
@@ -32,10 +33,10 @@ trait ApiResponseTrait
             return $this->fail('请先登录',[],900);
         }
         $token_info = collect(JWTLibrary::decode($token));
-        if(!($token_info->has('member_id') && intval($token_info->get('member_id'))>=1 && $this->member = Member::query()->where(['id'=>intval($token_info->get('member_id'))])->first())){
+        if(!($token_info->has('member_id') && intval($token_info->get('member_id'))>=1 && $this->member = CrmUser::query()->where(['id'=>intval($token_info->get('member_id'))])->first())){
             return $this->fail('请先登录',[],900);
         }
-        if($this->member->getAttribute('status') != '0'){
+        if($this->member->getAttribute('state') != '0'){
             return $this->fail('您已被禁止登录');
         }
         return $this->member;

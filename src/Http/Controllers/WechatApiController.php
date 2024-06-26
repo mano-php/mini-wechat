@@ -40,6 +40,11 @@ class WechatApiController
         try {
             $response = collect(EasyWechatLibrary::getMiniAppApplication()->getUtils()->codeToSession($code));
         } catch (\Throwable $throwable) {
+            dump([
+                'msg' => $throwable->getMessage(),
+                'line' => $throwable->getLine(),
+                't' => $throwable->getTrace(),
+            ]);
             return $this->fail("登录失败：code无效");
 //            return $this->fail("code无效：{$throwable->getMessage()}");
         }
@@ -82,6 +87,7 @@ class WechatApiController
                  * 创建用户
                  */
                 $member = new CrmUser();
+                $member->setAttribute('state', 0);
                 $member->setAttribute('created_at', date('Y-m-d H:i:s'));
                 $member->save();
                 /**
@@ -201,10 +207,10 @@ class WechatApiController
 
             // 生成一个随机文件名
             $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
-            if(!is_dir(base_path('public/uploads'))){
+            if (!is_dir(base_path('public/uploads'))) {
                 mkdir(base_path('public/uploads'));
             }
-            file_put_contents(base_path('public/uploads').DIRECTORY_SEPARATOR.$fileName,$image->getContent());
+            file_put_contents(base_path('public/uploads') . DIRECTORY_SEPARATOR . $fileName, $image->getContent());
             // 保存文件到指定目录
 //            $image->storeAs(base_path('public/uploads1'), $fileName);
 
@@ -214,8 +220,8 @@ class WechatApiController
 
             // 构建完整的文件路径
             $filePath = $protocol . '://' . $domain . '/uploads/' . $fileName;
-            return $this->success('上传成功',[
-                'path'=>$filePath
+            return $this->success('上传成功', [
+                'path' => $filePath
             ]);
         } else {
             return $this->fail('未上传文件');
