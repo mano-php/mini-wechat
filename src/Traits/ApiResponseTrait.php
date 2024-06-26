@@ -35,7 +35,7 @@ trait ApiResponseTrait
         if(!($token_info->has('member_id') && intval($token_info->get('member_id'))>=1 && $this->member = Member::query()->where(['id'=>intval($token_info->get('member_id'))])->first())){
             return $this->fail('请先登录',[],900);
         }
-        if($this->member->getAttribute('status') !== 'enable'){
+        if($this->member->getAttribute('status') != '0'){
             return $this->fail('您已被禁止登录');
         }
         return $this->member;

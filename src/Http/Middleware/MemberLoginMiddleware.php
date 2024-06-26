@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use ManoCode\MiniWechat\Library\JWTLibrary;
-use ManoCode\MiniWechat\Models\Member;
+use Mano\Crm\Models\CrmUser;
 use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
 /**
@@ -34,10 +34,10 @@ class MemberLoginMiddleware
             return $this->fail('请先登录',[],900);
         }
         $token_info = collect(JWTLibrary::decode($token));
-        if(!($token_info->has('member_id') && intval($token_info->get('member_id'))>=1 && $member_info = Member::query()->where(['id'=>intval($token_info->get('member_id'))])->first())){
+        if(!($token_info->has('member_id') && intval($token_info->get('member_id'))>=1 && $member_info = CrmUser::query()->where(['id'=>intval($token_info->get('member_id'))])->first())){
             return $this->fail('请先登录',[],900);
         }
-        if($member_info->getAttribute('status') !== 'enable'){
+        if($member_info->getAttribute('state') != 0){
             return $this->fail('您已被禁止登录');
         }
 

@@ -6,9 +6,9 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Mano\Crm\Models\CrmUser;
 use ManoCode\MiniWechat\Library\EasyWechatLibrary;
 use ManoCode\MiniWechat\Library\JWTLibrary;
-use ManoCode\MiniWechat\Models\Member;
 use ManoCode\MiniWechat\Models\WechatBind;
 use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
@@ -61,7 +61,7 @@ class WechatApiController
             $miniAppWechatBind->setAttribute('openid', $openid);
             $miniAppWechatBind->setAttribute('unionid', $unionid);
             $miniAppWechatBind->setAttribute('platform', 'mini-wechat');
-            $miniAppWechatBind->setAttribute('status', 'enable');
+            $miniAppWechatBind->setAttribute('state', 'enable');
             $miniAppWechatBind->setAttribute('created_at', date('Y-m-d H:i:s'));
             $miniAppWechatBind->save();
             return $this->loginDone(intval($wechatUnionIdBind->getAttribute('user_id')));
@@ -81,11 +81,7 @@ class WechatApiController
                 /**
                  * 创建用户
                  */
-                $member = new Member();
-                $member->setAttribute('nickname', '');
-                $member->setAttribute('avatar', '');
-                $member->setAttribute('mobile', '');
-                $member->setAttribute('status', 'enable');
+                $member = new CrmUser();
                 $member->setAttribute('created_at', date('Y-m-d H:i:s'));
                 $member->save();
                 /**
@@ -98,7 +94,7 @@ class WechatApiController
                     $miniAppWechatBind->setAttribute('unionid', $unionid);
                 }
                 $miniAppWechatBind->setAttribute('platform', 'mini-wechat');
-                $miniAppWechatBind->setAttribute('status', 'enable');
+                $miniAppWechatBind->setAttribute('state', 'enable');
                 $miniAppWechatBind->setAttribute('created_at', date('Y-m-d H:i:s'));
                 $miniAppWechatBind->save();
                 return $this->loginDone(intval($member->getAttribute('id')));
@@ -114,7 +110,7 @@ class WechatApiController
      */
     protected function loginDone(int $member_id, string $msg = '登录成功'): \Illuminate\Http\JsonResponse
     {
-        if (!($member = Member::query()->where(['id' => $member_id])->first())) {
+        if (!($member = CrmUser::query()->where(['id' => $member_id])->first())) {
             return $this->fail("用户不存在");
         }
         // 查询微信信息
@@ -129,7 +125,7 @@ class WechatApiController
                 ], 600);
             }
         }
-        if ($member->getAttribute('status') !== 'enable') {
+        if ($member->getAttribute('state') != 0) {
             return $this->fail("您已被禁止登录");
         }
         // 直接登录
@@ -169,7 +165,7 @@ class WechatApiController
         if (count($updateData) === 0) {
             return $this->fail('请传入要修改的值');
         }
-        Member::query()->where(['id' => intval($this->getMember($request)->getAttribute('id'))])->update($updateData);
+        CrmUser::query()->where(['id' => intval($this->getMember($request)->getAttribute('id'))])->update($updateData);
         return $this->success('修改成功');
     }
 
@@ -275,12 +271,12 @@ class WechatApiController
 
         try {
             // 用户创建检测
-            if (!($member = Member::query()->where(['mobile' => $mobile])->first())) {
-                $member = new Member();
+            if (!($member = CrmUser::query()->where(['mobile' => $mobile])->first())) {
+                $member = new CrmUser();
                 $member->setAttribute('nickname', '');
                 $member->setAttribute('avatar', '');
                 $member->setAttribute('mobile', $mobile);
-                $member->setAttribute('status', 'enable');
+                $member->setAttribute('state', 0);
                 $member->setAttribute('created_at', date('Y-m-d H:i:s'));
                 $member->save();
             }
@@ -299,7 +295,7 @@ class WechatApiController
                 }
                 $bindModel->setAttribute('platform', 'mini-wechat');
                 $bindModel->setAttribute('user_id', $member->getAttribute('id'));
-                $bindModel->setAttribute('status', 'enable');
+                $bindModel->setAttribute('state', 'enable');
                 $bindModel->setAttribute('created_at', date('Y-m-d H:i:s'));
                 $bindModel->save();
             } else {

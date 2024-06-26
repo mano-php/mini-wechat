@@ -10,32 +10,32 @@ use ManoCode\MiniWechat\Models\WechatSetting;
 
 class MiniWechatServiceProvider extends ServiceProvider
 {
-    /**
-     * @var array
-     */
-    protected $menu = [
-        [
-            'parent'    => 0,
-            'title'     => '用户模块',
-            'url'       => '/users',
-            'url_type'  => '1',
-            'icon'      => 'ph:user-gear',
-        ],
-        [
-            'parent'    => '用户模块',
-            'title'     => '用户管理',
-            'url'       => '/member',
-            'url_type'  => '1',
-            'icon'      => 'ph:user-gear',
-        ],
-        [
-            'parent'    => '用户模块',
-            'title'     => '微信授权',
-            'url'       => '/wechat_bind',
-            'url_type'  => '1',
-            'icon'      => 'ph:user-gear',
-        ]
-    ];
+//    /**
+//     * @var array
+//     */
+//    protected $menu = [
+//        [
+//            'parent'    => 0,
+//            'title'     => '用户模块',
+//            'url'       => '/users',
+//            'url_type'  => '1',
+//            'icon'      => 'ph:user-gear',
+//        ],
+//        [
+//            'parent'    => '用户模块',
+//            'title'     => '用户管理',
+//            'url'       => '/member',
+//            'url_type'  => '1',
+//            'icon'      => 'ph:user-gear',
+//        ],
+//        [
+//            'parent'    => '用户模块',
+//            'title'     => '微信授权',
+//            'url'       => '/wechat_bind',
+//            'url_type'  => '1',
+//            'icon'      => 'ph:user-gear',
+//        ]
+//    ];
 
     public function install()
     {

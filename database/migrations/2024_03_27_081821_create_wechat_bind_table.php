@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('unionid')->index()->default('')->comment('平台ID');
             $table->string('openid')->index()->nullable()->comment('开放ID');
             $table->enum('platform', ['mp-wechat','mini-wechat','app-wechat','web-wechat'])->index()->comment('授权平台');
-            $table->enum('status', ['enable','disable'])->index()->default('enable')->comment('状态');
+            $table->enum('state', ['enable','disable'])->index()->default('enable')->comment('状态');
             $table->timestamps();
             $table->softDeletes();
         });

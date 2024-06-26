@@ -27,7 +27,7 @@ class WechatBindController extends AdminController
             ->filter($this->baseFilter()->body([
                 amis()->SelectControl('user_id', '用户')->source('/mini-wechat/member')->clearable(),
                 amis()->SelectControl('platform', '授权平台')->options([['label' => '微信公众号','value' => 'mp-wechat',],['label' => '微信小程序','value' => 'mini-wechat',],['label' => 'APP','value' => 'app-wechat',],['label' => 'PC端','value' => 'web-wechat',],]),
-                amis()->SelectControl('status', '状态')->options([['label' => '启用','value' => 'enable',],['label' => '禁用','value' => 'disable',],]),
+                amis()->SelectControl('state', '状态')->options([['label' => '启用','value' => 'enable',],['label' => '禁用','value' => 'disable',],]),
             ]))
             ->columns([
                 amis()->TableColumn('id', 'ID')->sortable(),
@@ -53,7 +53,7 @@ class WechatBindController extends AdminController
 			amis()->TextControl('unionid', '平台ID'),
 			amis()->TextControl('openid', '开放ID'),
 			amis()->SelectControl('platform', '授权平台')->options([['label' => '微信公众号','value' => 'mp-wechat',],['label' => '微信小程序','value' => 'mini-wechat',],['label' => 'APP','value' => 'app-wechat',],['label' => 'PC端','value' => 'web-wechat',],]),
-			amis()->SelectControl('status', '状态')->options([['label' => '启用','value' => 'enable',],['label' => '禁用','value' => 'disable',],]),
+			amis()->SelectControl('state', '状态')->options([['label' => '启用','value' => 'enable',],['label' => '禁用','value' => 'disable',],]),
         ]);
     }
 
@@ -65,7 +65,7 @@ class WechatBindController extends AdminController
 			amis()->TextControl('unionid', '平台ID')->static(),
 			amis()->TextControl('openid', '开放ID')->static(),
 			amis()->SelectControl('platform', '授权平台')->options([['label' => '微信公众号','value' => 'mp-wechat',],['label' => '微信小程序','value' => 'mini-wechat',],['label' => 'APP','value' => 'app-wechat',],['label' => 'PC端','value' => 'web-wechat',],])->disabled(),
-			amis()->SelectControl('status', '状态')->options([['label' => '启用','value' => 'enable',],['label' => '禁用','value' => 'disable',],])->disabled(),
+			amis()->SelectControl('state', '状态')->options([['label' => '启用','value' => 'enable',],['label' => '禁用','value' => 'disable',],])->disabled(),
 			amis()->TextControl('created_at', __('admin.created_at'))->static(),
 			amis()->TextControl('updated_at', __('admin.updated_at'))->static()
         ]);

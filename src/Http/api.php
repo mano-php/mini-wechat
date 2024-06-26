@@ -1,15 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-//date_default_timezone_set('Asia/Shanghai');
-Route::any('/clear',function (\Illuminate\Http\Response $response){
-   \ManoCode\MiniWechat\Models\Member::query()->delete();
-   \ManoCode\MiniWechat\Models\WechatBind::query()->delete();
-   \ManoCode\MiniWechat\Models\MemberAddres::query()->delete();
-   return response()->json([
-       'status'=>'success'
-   ]);
-});
 // 小程序相关接口
 Route::group(['prefix'=>'/api/mini-app'],function(){
     // 登录接口（无需token）
