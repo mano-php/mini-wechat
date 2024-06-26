@@ -11,6 +11,9 @@
 ##### 因用户体系依赖于CRM模块，使用前请务必先启用 crm 扩展。
 
 
+##### 小程序代码在 扩展包目录下的 项目根目录./vendor/mano-code/mini-wechat/mini-app-wehcta-code
+
+
 ##### 前端授权登录、手机号绑定 相关接口接口文档请参考 [接口文档](https://apifox.com/apidoc/shared-45a3bab4-b170-4365-8cf3-b2d71c9c2068)
 
 #### 微信支付使用（小程序统一支付下单）更多下单参数 请参考 [微信官方文档](https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/mini-prepay.html)

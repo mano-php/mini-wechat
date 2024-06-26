@@ -1,0 +1,62 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^uv-(.*)": "@climblee/uv-ui/components/uv-$1/uv-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar": "none"
+				},
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/address/index",
+			"style": {
+				"navigationBarTitleText": "地址管理",
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar": "none"
+				},
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/setting/index",
+			"style": {
+				"navigationBarTitleText": "个人设置",
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar": "none"
+				},
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}
+	],
+	"app-plus": {
+		"safearea": {
+			"bottom": {
+				"offset": "none"
+			}
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
