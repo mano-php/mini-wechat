@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>'/api/mini-app'],function(){
     // 登录接口（无需token）
     Route::post('code-login',[\ManoCode\MiniWechat\Http\Controllers\WechatApiController::class,'codeLogin']);
+    // 获取配置
+    Route::get('get-config',[\ManoCode\MiniWechat\Http\Controllers\WechatApiController::class,'getConfig']);
     // 绑定手机号
     Route::post('bind-mobile',[\ManoCode\MiniWechat\Http\Controllers\WechatApiController::class,'bindMobile']);
     // 上传头像

@@ -123,7 +123,12 @@ class MiniWechatServiceProvider extends ServiceProvider
                                 'label'=>'是',
                                 'value'=>'yes'
                             ],
-                        ])->value($otherConfig->get('force_bind_mobile',''))
+                        ])->value($otherConfig->get('force_bind_mobile','')),
+                        amis()->TextControl('app_name','应用名称')->required()->value($otherConfig->get('app_name','')),
+                        amis()->ImageControl('app_logo','应用logo')->required()->value($otherConfig->get('app_logo','')),
+                        amis()->ImageControl('banner_img','活动图')->required()->value($otherConfig->get('banner_img','')),
+                        amis()->TextControl('tip_msg','登录页提示语')->required()->value($otherConfig->get('tip_msg','')),
+                        amis()->TextControl('protocol','隐私协议地址')->type('input-url')->required()->value($otherConfig->get('protocol','')),
                     ])->data(['extension' => $this->getName()])
                         ->initApi([
                             'url'    => admin_url('mini-wechat/getConfig/other'),

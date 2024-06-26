@@ -23,6 +23,12 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
+        if(!file_exists(public_path('mini-app-logo.png'))){
+            copy(__DIR__.DIRECTORY_SEPARATOR.'../../assets/logo.png',public_path('mini-app-logo.png'));
+        }
+        if(!file_exists(public_path('mini-app-login-image.png'))){
+            copy(__DIR__.DIRECTORY_SEPARATOR.'../../assets/login-image.png',public_path('mini-app-login-image.png'));
+        }
         \ManoCode\MiniWechat\Models\WechatSetting::query()->insert([
             // 小程序示例配置
             [
@@ -96,7 +102,42 @@ return new class extends Migration
                 'value'=>'no',
                 'label'=>'是否强制绑定手机号',
                 'created_at'=>date('Y-m-d H:i:s')
-            ]
+            ],
+            [
+                'type'=>'other',
+                'key'=>'app_name',
+                'value'=>'演示小程序',
+                'label'=>'应用名称',
+                'created_at'=>date('Y-m-d H:i:s')
+            ],
+            [
+                'type'=>'other',
+                'key'=>'app_logo',
+                'value'=>'',
+                'label'=>'应用Logo',
+                'created_at'=>date('Y-m-d H:i:s')
+            ],
+            [
+                'type'=>'other',
+                'key'=>'banner_img',
+                'value'=>'',
+                'label'=>'登录页活动图',
+                'created_at'=>date('Y-m-d H:i:s')
+            ],
+            [
+                'type'=>'other',
+                'key'=>'tip_msg',
+                'value'=>'账号可用于全平台登录',
+                'label'=>'登录页提示语',
+                'created_at'=>date('Y-m-d H:i:s')
+            ],
+            [
+                'type'=>'other',
+                'key'=>'protocol',
+                'value'=>'https://demo.nimiapp.local/protocol.html',
+                'label'=>'隐私协议连接',
+                'created_at'=>date('Y-m-d H:i:s')
+            ],
         ]);
     }
 

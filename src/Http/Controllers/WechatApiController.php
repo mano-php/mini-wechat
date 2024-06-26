@@ -10,6 +10,7 @@ use Mano\Crm\Models\CrmUser;
 use ManoCode\MiniWechat\Library\EasyWechatLibrary;
 use ManoCode\MiniWechat\Library\JWTLibrary;
 use ManoCode\MiniWechat\Models\WechatBind;
+use ManoCode\MiniWechat\Models\WechatSetting;
 use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
 /**
@@ -18,7 +19,18 @@ use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 class WechatApiController
 {
     use ApiResponseTrait;
-
+    public function getConfig()
+    {
+        // 其他配置
+        $otherConfig = WechatSetting::query()->where('type','other')->pluck('value','key');
+        return $this->success('获取成功',[
+            'app_name'=>$otherConfig->get('app_name'),
+            'app_logo'=>request()->getSchemeAndHttpHost().'/'.$otherConfig->get('app_logo'),
+            'banner_img'=>request()->getSchemeAndHttpHost().'/'.$otherConfig->get('banner_img'),
+            'tip_msg'=>$otherConfig->get('tip_msg'),
+            'protocol'=>$otherConfig->get('protocol'),
+        ]);
+    }
     /**
      * 微信code 登录
      * @param Request $request
