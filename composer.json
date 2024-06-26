@@ -20,7 +20,8 @@
         "slowlyo/owl-admin": "*",
         "w7corp/easywechat": "6.15.1",
         "mano-code/corps": "*",
-        "ext-openssl": "*"
+        "ext-openssl": "*",
+        "mano-code/crm": "*"
     },
     "autoload": {
         "psr-4": {
