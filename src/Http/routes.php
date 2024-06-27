@@ -3,8 +3,6 @@
 use ManoCode\MiniWechat\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
-// 用户管理
-Route::resource('member', \ManoCode\MiniWechat\Http\Controllers\MemberController::class);
 // 微信授权
 Route::resource('wechat_bind', \ManoCode\MiniWechat\Http\Controllers\WechatBindController::class);
 // 收货地址
