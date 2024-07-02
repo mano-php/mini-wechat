@@ -6,7 +6,7 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Mano\Crm\Models\CrmUser;
+use Mano\Scrm\Models\ScrmUser;
 use ManoCode\MiniWechat\Library\EasyWechatLibrary;
 use ManoCode\MiniWechat\Library\JWTLibrary;
 use ManoCode\MiniWechat\Models\WechatBind;
@@ -98,7 +98,7 @@ class WechatApiController
                 /**
                  * 创建用户
                  */
-                $member = new CrmUser();
+                $member = new ScrmUser();
                 $member->setAttribute('state', 0);
                 $member->setAttribute('created_at', date('Y-m-d H:i:s'));
                 $member->save();
@@ -128,7 +128,7 @@ class WechatApiController
      */
     protected function loginDone(int $member_id, string $msg = '登录成功'): \Illuminate\Http\JsonResponse
     {
-        if (!($member = CrmUser::query()->where(['id' => $member_id])->first())) {
+        if (!($member = ScrmUser::query()->where(['id' => $member_id])->first())) {
             return $this->fail("用户不存在");
         }
         // 查询微信信息
@@ -183,7 +183,7 @@ class WechatApiController
         if (count($updateData) === 0) {
             return $this->fail('请传入要修改的值');
         }
-        CrmUser::query()->where(['id' => intval($this->getMember($request)->getAttribute('id'))])->update($updateData);
+        ScrmUser::query()->where(['id' => intval($this->getMember($request)->getAttribute('id'))])->update($updateData);
         return $this->success('修改成功');
     }
 
@@ -289,8 +289,8 @@ class WechatApiController
 
         try {
             // 用户创建检测
-            if (!($member = CrmUser::query()->where(['mobile' => $mobile])->first())) {
-                $member = new CrmUser();
+            if (!($member = ScrmUser::query()->where(['mobile' => $mobile])->first())) {
+                $member = new ScrmUser();
                 $member->setAttribute('nickname', '');
                 $member->setAttribute('avatar', '');
                 $member->setAttribute('mobile', $mobile);

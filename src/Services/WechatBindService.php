@@ -2,7 +2,7 @@
 
 namespace ManoCode\MiniWechat\Services;
 
-use Mano\Crm\Models\CrmUser;
+use Mano\Scrm\Models\ScrmUser;
 use ManoCode\MiniWechat\Models\Member;
 use ManoCode\MiniWechat\Models\WechatBind;
 use Slowlyo\OwlAdmin\Services\AdminService;
@@ -29,7 +29,7 @@ class WechatBindService extends AdminService
         $items = $list->items();
         $total = $list->total();
         foreach ($items as $key => $item) {
-            if ($member = CrmUser::query()->where(['id' => $item['user_id']])->first()) {
+            if ($member = ScrmUser::query()->where(['id' => $item['user_id']])->first()) {
                 if (strlen($member->getAttribute('nickname')) >= 1) {
                     $items[$key]['user_info'] = "{$member->getAttribute('nickname')}-{$member->getAttribute('mobile')}";
                 } else {
