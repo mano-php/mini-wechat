@@ -22,6 +22,7 @@ Route::group(['prefix'=>'/api/mini-app'],function(){
     ],function(){
         // 微信小程序 下单
         Route::post('/mini-wechat-put',[\ManoCode\MiniWechat\Http\Controllers\PaymentController::class,'miniWechatPut']);
+        
     });
 });
 

@@ -93,7 +93,7 @@ class MiniWechatServiceProvider extends ServiceProvider
                     'title'=>'支付配置',
                     'body'=>$this->baseSettingForm()->body([
                         amis()->HiddenControl('type','配置类型')->value('wechat-payment'),
-                        amis()->TextControl('mch_id','商户ID')->value($wechatPaymentConfig->get('mch_id','')),
+                        amis()->TextControl('mch_id','商户id')->value($wechatPaymentConfig->get('mch_id','')),
                         amis()->TextControl('secret_key','v3 API 秘钥')->value($wechatPaymentConfig->get('secret_key','')),
                         amis()->TextareaControl('certificate','证书')->value($wechatPaymentConfig->get('certificate','')),
                         amis()->TextareaControl('private_key','证书秘钥')->value($wechatPaymentConfig->get('private_key','')),
