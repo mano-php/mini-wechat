@@ -6,7 +6,7 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
-use Mano\Scrm\Models\ScrmUser;
+use ManoCode\Scrm\Models\ScrmUser;
 use ManoCode\MiniWechat\Library\EasyWechatLibrary;
 use ManoCode\MiniWechat\Library\JWTLibrary;
 use ManoCode\MiniWechat\Models\WechatBind;

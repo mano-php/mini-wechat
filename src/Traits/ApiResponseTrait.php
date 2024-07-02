@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ManoCode\MiniWechat\Traits;
 
 use Illuminate\Http\Request;
-use Mano\Scrm\Models\ScrmUser;
+use ManoCode\Scrm\Models\ScrmUser;
 use ManoCode\MiniWechat\Http\Middleware\MemberLoginMiddleware;
 use ManoCode\MiniWechat\Library\JWTLibrary;
 use ManoCode\MiniWechat\Models\Member;

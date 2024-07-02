@@ -2,7 +2,7 @@
 
 namespace ManoCode\MiniWechat\Services;
 
-use Mano\Scrm\Models\ScrmUser;
+use ManoCode\Scrm\Models\ScrmUser;
 use ManoCode\MiniWechat\Models\Member;
 use ManoCode\MiniWechat\Models\WechatBind;
 use Slowlyo\OwlAdmin\Services\AdminService;

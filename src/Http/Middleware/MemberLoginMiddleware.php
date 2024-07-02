@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use ManoCode\MiniWechat\Library\JWTLibrary;
-use Mano\Scrm\Models\ScrmUser;
+use ManoCode\Scrm\Models\ScrmUser;
 use ManoCode\MiniWechat\Traits\ApiResponseTrait;
 
 /**
