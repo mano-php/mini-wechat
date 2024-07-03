@@ -3,7 +3,7 @@
     "alias": "微信小程序模块",
     "description": "微信登录、授权、支付相关功能",
     "type": "library",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "keywords": [
         "extension"
     ],
@@ -19,7 +19,9 @@
         "php": ">=8.0",
         "slowlyo/owl-admin": "*",
         "w7corp/easywechat": "^6.15.1",
+        "mano-code/filesystem": "*",
         "mano-code/corps": "*",
+        "mano-code/scrm": "*",
         "ext-openssl": "*"
     },
     "autoload": {

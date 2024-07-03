@@ -2,41 +2,15 @@
 
 namespace ManoCode\MiniWechat;
 
-use Slowlyo\OwlAdmin\Models\AdminMenu;
+use ManoCode\FileSystem\Extend\ManoCodeServiceProvider;
 use Slowlyo\OwlAdmin\Renderers\Form;
-use Slowlyo\OwlAdmin\Renderers\TextControl;
-use Slowlyo\OwlAdmin\Extend\ServiceProvider;
 use ManoCode\MiniWechat\Models\WechatSetting;
 
-class MiniWechatServiceProvider extends ServiceProvider
+/**
+ * 微信小程序扩展
+ */
+class MiniWechatServiceProvider extends ManoCodeServiceProvider
 {
-//    /**
-//     * @var array
-//     */
-//    protected $menu = [
-//        [
-//            'parent'    => 0,
-//            'title'     => '用户模块',
-//            'url'       => '/users',
-//            'url_type'  => '1',
-//            'icon'      => 'ph:user-gear',
-//        ],
-//        [
-//            'parent'    => '用户模块',
-//            'title'     => '用户管理',
-//            'url'       => '/member',
-//            'url_type'  => '1',
-//            'icon'      => 'ph:user-gear',
-//        ],
-//        [
-//            'parent'    => '用户模块',
-//            'title'     => '微信授权',
-//            'url'       => '/wechat_bind',
-//            'url_type'  => '1',
-//            'icon'      => 'ph:user-gear',
-//        ]
-//    ];
-
     public function install()
     {
         parent::install();
@@ -51,7 +25,6 @@ class MiniWechatServiceProvider extends ServiceProvider
     }
 	public function settingForm()
 	{
-
         try{
             // 获取小程序配置
             $miniWechatConfig = WechatSetting::query()->where('type','mini-wechat')->pluck('value','key');

@@ -201,7 +201,7 @@ class WechatApiController
             'mobile' => $this->getMember($request)->getAttribute('mobile'),
             'avatar' => $this->getMember($request)->getAttribute('avatar'),
             'sex' => $this->getMember($request)->getAttribute('sex'),
-            'luck_date' => $this->getMember($request)->getAttribute('luck_date')
+            'luck_date' => intval($this->getMember($request)->getAttribute('luck_date'))
         ]);
     }
 
