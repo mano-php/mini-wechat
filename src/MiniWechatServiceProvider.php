@@ -2,7 +2,7 @@
 
 namespace ManoCode\MiniWechat;
 
-use ManoCode\FileSystem\Extend\ManoCodeServiceProvider;
+use ManoCode\CustomExtend\Extend\ManoCodeServiceProvider;
 use Slowlyo\OwlAdmin\Renderers\Form;
 use ManoCode\MiniWechat\Models\WechatSetting;
 
