@@ -195,13 +195,14 @@ class WechatApiController
      */
     public function getInfo(Request $request): \Illuminate\Http\JsonResponse
     {
+        $member = $this->getMember($request);
         return $this->success('修改成功', [
-            'id' => $this->getMember($request)->getAttribute('id'),
-            'nickname' => $this->getMember($request)->getAttribute('nickname'),
-            'mobile' => $this->getMember($request)->getAttribute('mobile'),
-            'avatar' => $this->getMember($request)->getAttribute('avatar'),
-            'sex' => $this->getMember($request)->getAttribute('sex'),
-            'luck_date' => intval($this->getMember($request)->getAttribute('luck_date'))
+            'id' => $member->getAttribute('id'),
+            'nickname' => $member->getAttribute('nickname'),
+            'mobile' => $member->getAttribute('mobile'),
+            'avatar' => $member->getAttribute('avatar'),
+            'sex' => $member->getAttribute('sex'),
+            'luck_date' => $member->getAttribute('luck_date') ? $member->getAttribute('luck_date')->toDateString() : null
         ]);
     }
 
